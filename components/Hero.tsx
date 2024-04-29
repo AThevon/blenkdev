@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Button } from "./ui/moving-border";
 import Spline from "@splinetool/react-spline";
@@ -9,7 +9,7 @@ import Image from "next/image";
 export function Hero() {
     return (
         <>
-            <AuroraBackground className="absolute top-0 h-screen w-screen" />
+            {/* <AuroraBackground className="absolute top-0 left-0 h-screen w-screen" /> */}
             <div className="flex justify-between px-20 max-w-[2000px] w-full h-screen">
                 <motion.div
                     initial={{ opacity: 0.0, y: 40 }}
@@ -52,7 +52,6 @@ export function Hero() {
                         scene="https://prod.spline.design/paCAePhrCCbSnWIr/scene.splinecode"
                     />
                 </motion.div>
-
             </div>
         </>
     );
