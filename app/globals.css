@@ -74,9 +74,19 @@
       @apply border-border;
    }
    body {
-      @apply bg-background text-foreground font-sans;
+      @apply bg-background dark:bg-foreground font-sans text-neutral-800 dark:text-neutral-200;
+   }
+   h1, h2, h3, h4, h5, h6 {
+      @apply font-bold text-neutral-800 dark:text-neutral-200;
    }
    h1 {
-      @apply font-main font-bold text-3xl md:text-7xl dark:text-white;
+      @apply text-xl md:text-3xl;
+   }
+   p, a, li, span {
+      @apply text-neutral-800 dark:text-neutral-200;
+   }
+   .negative {
+      @apply text-neutral-200 dark:text-neutral-800;
    }
 }
+

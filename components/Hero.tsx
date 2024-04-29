@@ -10,7 +10,7 @@ export function Hero() {
     return (
         <>
             {/* <AuroraBackground className="absolute top-0 left-0 h-screen w-screen" /> */}
-            <div className="flex justify-between px-20 max-w-[2000px] w-full h-screen">
+            <div className="flex justify-between mx-auto px-40 max-w-[2000px] w-full h-screen">
                 <motion.div
                     initial={{ opacity: 0.0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -19,17 +19,13 @@ export function Hero() {
                         duration: 0.8,
                         ease: "easeInOut",
                     }}
-                    className="relative flex flex-col items-start justify-center px-4"
+                    className="relative flex flex-col items-start justify-center select-none"
                 >
-                    <Image src="/logo.png" alt="" width={200} height={200} property="logo" priority />
-                    <h1 className="font-main">
-                        BlenkTech
-                    </h1>
-                    <p className="font-sans md:text-4xl dark:text-neutral-200 py-4">
+                    <p className="font-sans md:text-4xl py-4">
                         Make the impossible possible
                     </p>
                     <Button
-                        className="bg-primary/70 dark:text-black font-semibold uppercase text-lg"
+                        className="negative bg-primary/70 font-semibold uppercase text-lg"
                         containerClassName="w-60 h-16"
                     >
                         Discover Now
@@ -45,7 +41,7 @@ export function Hero() {
                         damping: 10,
                         stiffness: 100,
                     }}
-                    className="relative w-2/3"
+                    className="relative w-[50%]"
                 >
                     <Spline
                         className="relative w-full h-full"

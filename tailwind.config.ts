@@ -21,11 +21,14 @@ const config = {
          },
       },
       extend: {
+         title: ["font-main", "font-bold", "text-3xl", "md:text-7xl"],
          fontFamily: {
             main: ["var(--main-font)", "sans-serif"],
             sans: ["var(--second-font)", "sans-serif"],
          },
          colors: {
+            black2: "neutral-900",
+            white2: "neutral-50",
             black: "hsl(var(--black))",
             white: "hsl(var(--white))",
             border: "hsl(var(--border))",
