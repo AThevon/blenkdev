@@ -10,8 +10,18 @@ import {
 } from "framer-motion";
 import { navlinks } from "@/data/navlinks";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const AnimatedTooltip = () => {
+    const pathname = usePathname();
+
+    function getFirstPath(path: string) {
+        const pathName = pathname.split("/")[1];
+        const actualPath = path.split("/")[1];
+        return pathName === actualPath ? true : false;
+    }
+
+    const activeLink = navlinks.find((link) => link.path === pathname);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const springConfig = { stiffness: 100, damping: 5 };
     const x = useMotionValue(0); // going to set this value on mouse move
@@ -73,15 +83,26 @@ export const AnimatedTooltip = () => {
                         width={100}
                         src={item.icon}
                         alt={item.title}
-                        className="object-contain bg-neutral-100 !dark:bg-neutral-800 p-3 object-center filter dark:invert hover:shadow-md rounded-2xl h-14 w-14 border-2 group-hover:scale-110 group-hover:z-30 border-neutral-200 !dark:border-neutral-700 relative transition duration-200"
+                        className={`object-contain bg-neutral-50 !dark:bg-neutral-800 p-3 object-center filter dark:invert
+                        hover:shadow-md rounded-2xl h-14 w-14 border-2 ${!getFirstPath(item.path) ? "group-hover:scale-110" : ""} z-10 group-hover:z-30 border-neutral-200 !dark:border-neutral-700 relative transition duration-200`}
                     />
-                    <div className="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden group-hover:scale-110 group-hover:z-30  pointer-events-none transition duration-200">
+                    {getFirstPath(item.path) ? (
                         <motion.span
-                            className="absolute top-0 left-1/2 -translate-x-1/2 w-full -z-1 -translate-y-2 group-hover:translate-y-0
-                            transition duration-200 "
-                            style={{ boxShadow: `0 0px 3px 2px ${item.color}` }}
+                            layoutId="overline"
+                            transition={{ type: "spring", damping: 20, stiffness: 200, duration: 0.5 }}
+
+                            className="absolute top-0 -left-[3px] bg-myyellow-500 rounded-2xl w-[105%] h-[105%] -z-50
+                            "
                         ></motion.span>
-                    </div>
+                    ) : (
+                        <div className="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden group-hover:scale-110 group-hover:z-30  pointer-events-none transition duration-200">
+                            <motion.span
+                                className={`absolute top-0 left-1/2 -translate-x-1/2 w-full -z-1 -translate-y-2 group-hover:translate-y-0 $
+                                    transition duration-200`}
+                                style={{ boxShadow: `0 0px 3px 2px #fdbb00` }}
+                            ></motion.span>
+                        </div>
+                    )}
                 </Link>
             ))}
         </>

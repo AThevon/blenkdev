@@ -62,7 +62,7 @@ export const PageWrapper = ({
         animate="animate"
         exit="exit"
         transition={{ duration: 0.6 }}
-        className={`${container ? "container" : ""}`}
+        className={`${container ? "container" : ""} min-h-screen`}
     >
         {children}
     </motion.main>

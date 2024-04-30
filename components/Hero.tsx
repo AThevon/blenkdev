@@ -73,7 +73,7 @@ export function Hero() {
                         Make the impossible possible
                     </p>
                     <Button
-                        className="bg-neutral-100/90 dark:bg-black/90 dark:text-white font-semibold uppercase text-lg"
+                        className="bg-neutral-50/90 dark:bg-neutral-950/85 dark:text-white font-semibold uppercase text-lg"
                         containerClassName="w-60 h-16"
                         onClick={() => {
                             window.scrollTo({
