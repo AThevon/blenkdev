@@ -75,6 +75,12 @@ export function Hero() {
                     <Button
                         className="bg-neutral-100/90 dark:bg-black/90 dark:text-white font-semibold uppercase text-lg"
                         containerClassName="w-60 h-16"
+                        onClick={() => {
+                            window.scrollTo({
+                                top: window.innerHeight,
+                                behavior: "smooth",
+                            });
+                        }}
                     >
                         Discover Now
                     </Button>

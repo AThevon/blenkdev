@@ -48,11 +48,13 @@ export const PageWrapper = ({
     children,
     xAxis,
     yAxis,
+    container,
 }: {
     children: React.ReactNode;
     className?: string;
     xAxis?: boolean;
     yAxis?: boolean;
+    container?: boolean;
 }) => (
     <motion.main
         variants={yAxis ? yAxisVariants : xAxis ? xAxisVariants : opacityVariants}
@@ -60,6 +62,7 @@ export const PageWrapper = ({
         animate="animate"
         exit="exit"
         transition={{ duration: 0.6 }}
+        className={`${container ? "container" : ""}`}
     >
         {children}
     </motion.main>

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-three/drei": "^9.105.4",
     "@react-three/fiber": "^8.16.2",
@@ -16,6 +17,7 @@
     "@splinetool/r3f-spline": "^1.0.2",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.1.9",
+    "@tabler/icons-react": "^3.2.0",
     "@types/three": "^0.164.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
