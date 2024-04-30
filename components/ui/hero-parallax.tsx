@@ -17,6 +17,7 @@ export const HeroParallax = ({
         title: string;
         link: string;
         thumbnail: string;
+        icon: string;
     }[];
 }) => {
     const firstRow = products.slice(0, 5);
@@ -124,6 +125,7 @@ export const ProductCard = ({
         title: string;
         link: string;
         thumbnail: string;
+        icon: string;
     };
     translate: MotionValue<number>;
 }) => {
@@ -135,23 +137,33 @@ export const ProductCard = ({
             whileHover={{
                 y: -20,
             }}
+            whileTap={{
+                y: 0,
+            }}
             key={product.title}
-            className="group/product h-96 w-[30rem] relative flex-shrink-0"
+            className="group/product h-96 w-[35rem] relative flex-shrink-0"
         >
             <Link
                 href={product.link}
-                className="block group-hover/product:shadow-2xl "
+                className="block group-hover/product:shadow-2xl"
             >
                 <Image
                     src={product.thumbnail}
                     height="600"
                     width="600"
-                    className="object-cover object-left-top absolute h-full w-full inset-0"
+                    className="object-cover object-left-top absolute h-full w-full inset-0 rounded-2xl"
                     alt={product.title}
                 />
             </Link>
-            <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-            <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+            <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none rounded-2xl"></div>
+            <Image
+                src={product.icon}
+                height="400"
+                width="400"
+                className="object-contain absolute mx-auto h-full py-12 inset-0 rounded-2xl scale-0 group-hover/product:scale-100 opacity-0 group-hover/product:opacity-100 transition-all duration-300 ease-in-out pointer-events-none select-none delay-75"
+                alt={product.title}
+            />
+            <h2 className="absolute text-lg bottom-4 left-4 opacity-0 translate-y-10 group-hover/product:opacity-100 group-hover/product:translate-y-0 text-white transition-all duration-300 ease-in-out delay-100">
                 {product.title}
             </h2>
         </motion.div>
