@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { FC } from "react";
 import Link from "next/link";
+import { AnimatedTooltip } from "./ui/animated-tooltip";
 
 type HeaderProps = {
     isDark: boolean;
@@ -50,13 +51,14 @@ export const Header: FC<HeaderProps> = ({ isDark, setIsDark }) => {
                     </motion.span>
                 </Button>
             </div>
-            <nav className="mx-auto absolute top-8 left-1/2 -translate-x-1/2 flex justify-center items-center space-x-4 z-10">
-                <Button asChild className="text-lg">
+            <nav className="mx-auto absolute top-8 left-1/2 -translate-x-1/2 flex justify-center items-center gap-2 z-10">
+                <AnimatedTooltip />
+                {/* <Button asChild className="text-lg">
                     <Link href="/">Home</Link>
                 </Button>
                 <Button asChild className="text-lg">
                     <Link href="/services">Services</Link>
-                </Button>
+                </Button> */}
             </nav>
 
         </header>

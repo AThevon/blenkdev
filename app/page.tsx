@@ -1,11 +1,12 @@
 import { Hero } from "@/components/Hero";
+import { PageWrapper } from "@/components/PageWrapper";
 import { Parallax } from "@/components/Parallax";
 
 export default function Home() {
     return (
-        <main>
+        <PageWrapper>
             <Hero />
             <Parallax />
-        </main>
+        </PageWrapper>
     );
 }
