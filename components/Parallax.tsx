@@ -1,30 +1,11 @@
 "use client";
 import React from "react";
 import { HeroParallax } from "@/components/ui/hero-parallax";
+import { projects } from "@/data/projects";
 
 export function Parallax() {
     function duplicateProjects(nb: number) {
-        return Array.from({ length: nb }, (_, i) => products[i % products.length]);
+        return Array.from({ length: nb }, (_, i) => projects[i % projects.length]);
     }
     return <HeroParallax products={duplicateProjects(17) as []} />;
 }
-export const products = [
-    {
-        title: "Artkansia",
-        link: "https://theo-perrin-portfolio.vercel.app",
-        thumbnail:
-            "/projects/background-artkansia.png",
-    },
-    {
-        title: "Coque En Bois",
-        link: "https://coque-en-bois.fr",
-        thumbnail:
-            "/projects/background-coque-en-bois.jpg",
-    },
-    {
-        title: "Portfolio AThevon",
-        link: "https://adrienthevon.fr",
-        thumbnail:
-            "/projects/background-athevon.png",
-    },
-];
