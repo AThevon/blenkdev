@@ -18,16 +18,18 @@ export default function AppWrapper({ children, fonts }: AppWrapperProps) {
 
     useEffect(() => {
         if (isDark) {
+            document.documentElement.style.backgroundColor = "#191919";
             document.body.classList.add("dark");
             localStorage.setItem("theme", "dark");
         } else {
+            document.documentElement.style.backgroundColor = "#FAFAFA";
             document.body.classList.remove("dark");
             localStorage.setItem("theme", "light");
         }
     }, [isDark]);
 
     return (
-        <body className={`${fonts}`}>
+        <body className={`${fonts} min-h-screen`}>
             <Header isDark={isDark} setIsDark={setIsDark} />
             {children}
         </body>

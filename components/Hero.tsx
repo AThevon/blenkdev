@@ -17,7 +17,7 @@ export function Hero() {
     return (
         <>
             <motion.div
-                className="fixed h-screen w-full object-cover object-center top-0 -z-10"
+                className="fixed h-screen w-full object-cover object-center top-0 -z-1"
                 initial={{ opacity: 0, x: 800, y: 0, rotate: 0 }}
                 animate={{ opacity: 1, x: 200, y: 50, rotate: -15 }}
                 transition={{ delay: 1, duration: 3, type: "spring", damping: 15, stiffness: 100 }}

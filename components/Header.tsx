@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 import { FC } from "react";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
 import Logo from "@/components/Logo";
@@ -18,9 +17,14 @@ export const Header: FC<HeaderProps> = ({ isDark, setIsDark }) => {
                 <Logo />
                 <DarkToggle isDark={isDark} setIsDark={setIsDark} />
             </div>
-            <nav className="mx-auto absolute top-8 left-1/2 -translate-x-1/2 flex justify-center items-center gap-3 z-10">
+            <motion.nav 
+                className="mx-auto w-full absolute top-8 flex justify-center items-center gap-3 z-10"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.5 }}
+            >
                 <AnimatedTooltip />
-            </nav>
+            </motion.nav>
 
         </header>
     );
