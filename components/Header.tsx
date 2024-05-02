@@ -3,6 +3,7 @@ import { FC } from "react";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
 import Logo from "@/components/Logo";
 import DarkToggle from "./DarkToggle";
+import { LangSelect } from "./LangSelect";
 
 type HeaderProps = {
     isDark: boolean;
@@ -15,9 +16,10 @@ export const Header: FC<HeaderProps> = ({ isDark, setIsDark }) => {
         <header className="absolute top-0 left-0 flex items-center justify-between w-full">
             <div className="w-full flex items-center justify-between px-8 py-4">
                 <Logo />
+                <LangSelect />
                 <DarkToggle isDark={isDark} setIsDark={setIsDark} />
             </div>
-            <motion.nav 
+            <motion.nav
                 className="mx-auto w-full absolute top-8 flex justify-center items-center gap-3 z-10"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -25,8 +27,7 @@ export const Header: FC<HeaderProps> = ({ isDark, setIsDark }) => {
             >
                 <AnimatedTooltip />
             </motion.nav>
-
-        </header>
+        </header >
     );
 }
 
