@@ -8,8 +8,9 @@ type AppWrapperProps = {
     fonts: string;
 };
 
-export default function AppWrapper({ children, fonts }: AppWrapperProps) {
+export function AppWrapper({ children, fonts }: AppWrapperProps) {
     const [isDark, setIsDark] = useState<boolean>(false);
+
     useEffect(() => {
         if (localStorage.getItem("theme") === "dark") {
             setIsDark(true);

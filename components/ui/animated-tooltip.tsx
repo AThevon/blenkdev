@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import {
     motion,
     useTransform,
-    AnimatePresence,
     useMotionValue,
     useSpring,
 } from "framer-motion";
@@ -14,11 +13,16 @@ import { usePathname } from "next/navigation";
 
 export const AnimatedTooltip = () => {
     const pathname = usePathname();
-
+    
+    //!!!
     function getFirstPath(path: string) {
-        const pathName = pathname.split("/")[1];
-        const actualPath = path.split("/")[1];
-        return pathName === actualPath ? true : false;
+        if (pathname.split("/").length > 2) {
+            const cleanPathname = `/${pathname.split("/")[2]}`
+            console.log(cleanPathname, path);
+            return cleanPathname === path;
+        }
+        const cleanPathname = pathname.replace(/^\/fr/, '/');
+        return cleanPathname === path;
     }
 
     const activeLink = navlinks.find((link) => link.path === pathname);
@@ -46,7 +50,7 @@ export const AnimatedTooltip = () => {
                 <Link
                     className="relative group active:scale-95 transition duration-200"
                     key={item.title}
-                    href={item.path}
+                    href={`${item.path}`}
                     onMouseEnter={() => setHoveredIndex(idx)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >

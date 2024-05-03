@@ -55,15 +55,20 @@ export const PageWrapper = ({
     xAxis?: boolean;
     yAxis?: boolean;
     container?: boolean;
-}) => (
-    <motion.main
-        variants={yAxis ? yAxisVariants : xAxis ? xAxisVariants : opacityVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 0.6 }}
-        className={`${container ? "container" : ""} min-h-screen`}
-    >
-        {children}
-    </motion.main>
-);
+}) => {
+
+    return (
+        <>
+            <motion.main
+                variants={yAxis ? yAxisVariants : xAxis ? xAxisVariants : opacityVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.6 }}
+                className={`${container ? "container" : ""} min-h-screen`}
+            >
+                {children}
+            </motion.main>
+        </>
+    );
+};

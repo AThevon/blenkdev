@@ -7,8 +7,10 @@ import Spline from "@splinetool/react-spline";
 import Image from "next/image";
 import { BackgroundBeams } from "./ui/background-beams";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
+    const { t } = useTranslation();
     const { scrollYProgress } = useScroll();
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "150%"]);
 
@@ -70,7 +72,7 @@ export function Hero() {
                     </motion.h2>
                     ))}
                     <p className="py-4 text-lg">
-                        Make the impossible possible
+                        {t("hero-sentence")}
                     </p>
                     <Button
                         className="bg-neutral-50/90 dark:bg-neutral-950/85 dark:text-white font-semibold uppercase text-lg"
