@@ -7,5 +7,5 @@ export function Parallax() {
     function duplicateProjects(nb: number) {
         return Array.from({ length: nb }, (_, i) => projects[i % projects.length]);
     }
-    return <HeroParallax products={duplicateProjects(17) as []} />;
+    return <HeroParallax products={duplicateProjects(21) as []} />;
 }

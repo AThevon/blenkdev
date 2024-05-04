@@ -6,13 +6,15 @@ import { Button } from "./ui/moving-border";
 import Spline from "@splinetool/react-spline";
 import Image from "next/image";
 import { BackgroundBeams } from "./ui/background-beams";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export function Hero() {
+
     const { t } = useTranslation();
     const { scrollYProgress } = useScroll();
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "150%"]);
+    const x = useTransform(scrollYProgress, [0, 0.5], ["1%", "75%"]);
+   const scale = useTransform(scrollYProgress, [0.5, 0.51], [1, 0]);
 
     const titleData = t("hero-title");
     const titleArray = titleData.split(" ");
@@ -25,10 +27,11 @@ export function Hero() {
                 initial={{ opacity: 0, x: 800, y: 0, rotate: 0 }}
                 animate={{ opacity: 1, x: 200, y: 50, rotate: -15 }}
                 transition={{ delay: 1, duration: 3, type: "spring", damping: 15, stiffness: 100 }}
+                style={{ scale }}
             >
                 <motion.img
                     transition={{ type: "spring", damping: 15, stiffness: 100 }}
-                    style={{ x: x }}
+                    style={{ x }}
                     src="/waves-bg.svg"
                     alt=""
                     className="h-[130%] w-full object-cover"
@@ -63,15 +66,15 @@ export function Hero() {
                     className="relative flex flex-col items-start justify-center select-none"
                 >
                     {titleArray.map((text, index) => (
-                    <motion.h2 
-                        className="text-6xl font-bold"
-                        key={index}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scaleX: 1.2, scale: 1 }}
-                        transition={{ type: "spring", damping: 10, stiffness: 300, mass: .8 }}
-                    >
-                        {text}
-                    </motion.h2>
+                        <motion.h2
+                            className="text-6xl font-bold"
+                            key={index}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scaleX: 1.2, scale: 1 }}
+                            transition={{ type: "spring", damping: 10, stiffness: 300, mass: .8 }}
+                        >
+                            {text}
+                        </motion.h2>
                     ))}
                     <p className="py-4 text-lg">
                         {t("hero-sentence")}

@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select"
 
 export function LangSelect() {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const currentLocale = i18n.language;
     const router = useRouter();
     const currentPathname = usePathname();

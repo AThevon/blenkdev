@@ -4,7 +4,7 @@ const langs = [
       code: "en",
    },
    {
-      name: "French",
+      name: "Français",
       code: "fr",
    },
    {
@@ -12,19 +12,19 @@ const langs = [
       code: "de",
    },
    {
-      name: "Spanish",
+      name: "Español",
       code: "es",
    },
    {
-      name: "Italian",
+      name: "Italiano",
       code: "it",
    },
    {
-      name: "Portuguese",
+      name: "Português",
       code: "pt",
    },
    {
-      name: "Russian",
+      name: "Русский",
       code: "ru",
    },
 ];

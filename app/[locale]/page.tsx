@@ -1,10 +1,8 @@
 import { Hero } from "@/components/Hero";
 import { PageWrapper } from "@/components/PageWrapper";
 import { Parallax } from "@/components/Parallax";
-import TranslationsProvider from "@/components/TranslationsProvider";
 import { Params } from "@/types/params";
 import initTranslations from "@/app/i18n";
-import { useTranslation } from "react-i18next";
 
 
 export default async function Home({ params: { locale } }: Params) {
@@ -14,6 +12,10 @@ export default async function Home({ params: { locale } }: Params) {
             <PageWrapper>
                 <Hero />
                 <Parallax />
+                <section className="h-screen w-full bg-red-500">
+                    {/* TODO Faire 3 composant pour amener vers les pages*/}
+
+                </section>
             </PageWrapper>
     );
 }
