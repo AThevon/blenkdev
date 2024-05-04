@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Header from "./Header";
+import Header from "@/components/misc/Header";
 
 type AppWrapperProps = {
     children: React.ReactNode;

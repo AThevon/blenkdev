@@ -3,7 +3,7 @@ import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { TextArea } from "./ui/textarea";
+import { TextArea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 

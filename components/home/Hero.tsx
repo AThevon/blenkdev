@@ -1,20 +1,17 @@
 "use client";
 
-import { animate, motion, MotionValue, useAnimation, useScroll, useTransform, useViewportScroll } from "framer-motion";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import { Button } from "./ui/moving-border";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@/components/ui/moving-border";
 import Spline from "@splinetool/react-spline";
-import Image from "next/image";
-import { BackgroundBeams } from "./ui/background-beams";
-import { use, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export function Hero() {
 
     const { t } = useTranslation();
     const { scrollYProgress } = useScroll();
-    const x = useTransform(scrollYProgress, [0, 0.5], ["1%", "75%"]);
-   const scale = useTransform(scrollYProgress, [0.5, 0.51], [1, 0]);
+    const x = useTransform(scrollYProgress, [0, 1], ["1%", "150%"]);
+    const opacity = useTransform(scrollYProgress, [0.5, 0.52], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0.53, 0.55], [1, 0]);
 
     const titleData = t("hero-title");
     const titleArray = titleData.split(" ");
@@ -27,11 +24,11 @@ export function Hero() {
                 initial={{ opacity: 0, x: 800, y: 0, rotate: 0 }}
                 animate={{ opacity: 1, x: 200, y: 50, rotate: -15 }}
                 transition={{ delay: 1, duration: 3, type: "spring", damping: 15, stiffness: 100 }}
-                style={{ scale }}
+                style={{ opacity, scale }}
             >
                 <motion.img
                     transition={{ type: "spring", damping: 15, stiffness: 100 }}
-                    style={{ x }}
+                    style={{ x, opacity }}
                     src="/waves-bg.svg"
                     alt=""
                     className="h-[130%] w-full object-cover"

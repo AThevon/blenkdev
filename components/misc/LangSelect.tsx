@@ -46,7 +46,7 @@ export function LangSelect() {
         <>
             <Select onValueChange={handleChange} defaultValue={currentLocale}>
                 <motion.div
-                    className="w-[80px] ml-auto mr-4 z-50"
+                    className="w-full"
                     whileHover={{ rotate: [0, 5, 0, -2, 0] }}
                     transition={{ duration: 0.25 }}
                 >

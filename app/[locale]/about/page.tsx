@@ -1,6 +1,6 @@
-import { Hero } from "@/components/Hero";
-import { PageWrapper } from "@/components/PageWrapper";
-import { Parallax } from "@/components/Parallax";
+import { Hero } from "@/components/home/Hero";
+import { PageWrapper } from "@/components/wrappers/PageWrapper";
+import { Parallax } from "@/components/home/Parallax";
 import TranslationsProvider from "@/components/TranslationsProvider";
 import { Params } from "@/types/params";
 import initTranslations from "@/app/i18n";

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Kodchasan, Montserrat } from "next/font/google";
-import "./globals.css";
-import { AppWrapper } from "@/components/AppWrapper";
+import "@/app/globals.css";
+import { AppWrapper } from "@/components/wrappers/AppWrapper";
 import { dir } from "i18next";
 import i18nConfig from "@/i18nConfig";
-import TranslationsProvider from "@/components/TranslationsProvider";
-import initTranslations from "../i18n";
+import TranslationsProvider from "@/components/wrappers/TranslationsProvider";
+import initTranslations from "@/app/i18n";
+import { Toaster } from "@/components/ui/toaster";
 
 const mainFont = Kodchasan({
     subsets: ["latin"],
@@ -57,6 +58,7 @@ export default async function RootLayout({
                 resources={resources}
             >
                 <AppWrapper fonts={fontVariables}>
+                    <Toaster />
                     {children}
                 </AppWrapper>
             </TranslationsProvider>
