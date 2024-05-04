@@ -10,15 +10,16 @@ import {
 import { navlinks } from "@/data/navlinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 export const AnimatedTooltip = () => {
     const pathname = usePathname();
+    const { t } = useTranslation("common");
     
     //!!!
     function getFirstPath(path: string) {
         if (pathname.split("/").length > 2) {
             const cleanPathname = `/${pathname.split("/")[2]}`
-            console.log(cleanPathname, path);
             return cleanPathname === path;
         }
         const cleanPathname = pathname.replace(/^\/fr/, '/');
@@ -77,7 +78,7 @@ export const AnimatedTooltip = () => {
                             z-50 shadow-xl px-4 py-2"
                         >
                             <div className="font-bold relative z-30 text-base">
-                                {item.title}
+                                {t(item.title)}
                             </div>
                         </motion.div>
                     )}

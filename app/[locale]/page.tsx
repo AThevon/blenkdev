@@ -3,7 +3,7 @@ import { PageWrapper } from "@/components/PageWrapper";
 import { Parallax } from "@/components/Parallax";
 import TranslationsProvider from "@/components/TranslationsProvider";
 import { Params } from "@/types/params";
-import initTranslations from "../i18n";
+import initTranslations from "@/app/i18n";
 import { useTranslation } from "react-i18next";
 
 

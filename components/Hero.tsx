@@ -14,7 +14,9 @@ export function Hero() {
     const { scrollYProgress } = useScroll();
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "150%"]);
 
-    const title = ["Embrace", "New", "Web", "Development"];
+    const titleData = t("hero-title");
+    const titleArray = titleData.split(" ");
+
 
     return (
         <>
@@ -60,7 +62,7 @@ export function Hero() {
                     }}
                     className="relative flex flex-col items-start justify-center select-none"
                 >
-                    {title.map((text, index) => (
+                    {titleArray.map((text, index) => (
                     <motion.h2 
                         className="text-6xl font-bold"
                         key={index}
@@ -75,8 +77,8 @@ export function Hero() {
                         {t("hero-sentence")}
                     </p>
                     <Button
-                        className="bg-neutral-50/90 dark:bg-neutral-950/85 dark:text-white font-semibold uppercase text-lg"
-                        containerClassName="w-60 h-16"
+                        className="bg-neutral-50/90 dark:bg-neutral-950/85 dark:text-white font-semibold uppercase px-8 text-lg"
+                        containerClassName="w-auto h-16"
                         onClick={() => {
                             window.scrollTo({
                                 top: window.innerHeight,
@@ -84,7 +86,7 @@ export function Hero() {
                             });
                         }}
                     >
-                        Discover Now
+                        {t("hero-cta")}
                     </Button>
                 </motion.div>
 

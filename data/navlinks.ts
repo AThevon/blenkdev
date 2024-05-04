@@ -1,5 +1,3 @@
-import { Home } from "lucide-react";
-
 const navlinks = [
     {
         title: "Home",
