@@ -22,7 +22,7 @@ const config = {
       },
       extend: {
          gridTemplateColumns: {
-            "socials-cards": "repeat(2, minmax(100px, 1fr))",
+            "socials-cards": "repeat(2, minmax(auto, 1fr))",
          },
          title: ["font-main", "font-bold", "text-3xl", "md:text-7xl"],
          fontFamily: {

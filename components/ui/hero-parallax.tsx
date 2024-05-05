@@ -124,7 +124,7 @@ export const Header = () => {
         >
             <motion.h2 className="text-2xl md:text-7xl font-bold dark:text-white"
                 initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0, }}
                 transition={{ duration: .6, delay: 0.4, type: "spring", bounce: 0.3 }}
             >
                 {t("parallax-title")}
@@ -168,6 +168,7 @@ export const ProductCard = ({
         >
             <Link
                 href={product.link}
+                target="_blank"
                 className="block group-hover/product:shadow-2xl"
             >
                 <Image
