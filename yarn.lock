@@ -150,18 +150,6 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lordicon/helpers@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@lordicon/helpers/-/helpers-1.6.0.tgz#c4ebaa8960e6321c6b2b9e731b5009e60d709af4"
-  integrity sha512-iEw6q1gycHf77e4o+PdTg1Ua4yXdREVnCsErTw/f4eaAUDYFF/qWQSq3mJJuiwvZ/JT1vwctQ2dKr1FxUY1W2w==
-
-"@lordicon/react@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@lordicon/react/-/react-1.6.0.tgz#7f16d5089c95b435faf366aaa673df9374c112ae"
-  integrity sha512-SqDdc9/ReRpO3D8t1WG+yOKAFwQsewuw9hf6++faJhGk/ZgUOA4mqPke4R/pc0pMhXHOeET9DPgvNi1dmRpxxw==
-  dependencies:
-    "@lordicon/helpers" "^1.6.0"
-
 "@mediapipe/tasks-vision@0.10.8":
   version "0.10.8"
   resolved "https://registry.yarnpkg.com/@mediapipe/tasks-vision/-/tasks-vision-0.10.8.tgz#a78e137018a19933b7a1d0e887d553d4ab833d10"
@@ -2520,18 +2508,6 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
-
-lottie-react@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/lottie-react/-/lottie-react-2.4.0.tgz#f7249eee2b1deee70457a2d142194fdf2456e4bd"
-  integrity sha512-pDJGj+AQlnlyHvOHFK7vLdsDcvbuqvwPZdMlJ360wrzGFurXeKPr8SiRCjLf3LrNYKANQtSsh5dz9UYQHuqx4w==
-  dependencies:
-    lottie-web "^5.10.2"
-
-lottie-web@^5.10.2, lottie-web@^5.12.2:
-  version "5.12.2"
-  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.12.2.tgz#579ca9fe6d3fd9e352571edd3c0be162492f68e5"
-  integrity sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==
 
 lru-cache@^10.2.0:
   version "10.2.1"
