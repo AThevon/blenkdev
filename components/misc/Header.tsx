@@ -6,7 +6,7 @@ import { LangSelect } from "./LangSelect";
 
 
 
-export const Header = () => {
+const Header = () => {
    return (
       <header className="absolute top-0 left-0 flex items-center justify-between w-full">
          <div className="w-full flex items-center justify-between px-8 py-4">

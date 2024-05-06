@@ -26,7 +26,7 @@ export const HoverEffect = ({
 
    const socialsContainer = {
       hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { delay: 0.3, delayChildren: 0.5, staggerChildren: 0.3 } },
+      visible: { opacity: 1, transition: { delay: 0.6, delayChildren: 0.8, staggerChildren: 0.3 } },
    };
 
    const socialsCard = {

@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Header from "@/components/misc/Header";
+import Footer from "../misc/Footer";
 import { useDarkContext } from "./DarkContext";
 
 type AppWrapperProps = {
@@ -37,9 +38,10 @@ export function AppWrapper({ children, fonts }: AppWrapperProps) {
    }, []);
 
    return (
-         <body className={`${fonts} min-h-screen`}>
-            <Header />
-            {children}
-         </body>
+      <body className={`${fonts} min-h-screen`}>
+         <Header />
+         {children}
+         <Footer />
+      </body>
    );
 }

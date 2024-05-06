@@ -53,13 +53,13 @@ export const HeroParallax = ({
         springConfig
     );
     const translateY = useSpring(
-        useTransform(scrollYProgress, [0, 0.2], [-700, 300]),
+        useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
         springConfig
     );
     return (
         <div
             ref={ref}
-            className="h-[260vh] pt-60 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+            className="h-[300vh] pt-60 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
         >
             <Header />
             <motion.div
@@ -110,7 +110,7 @@ export const Header = () => {
     const ref = React.useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["20px start", "end start"],
+        offset: ["-800px start", "end start"],
     });
 
     const springConfig = { stiffness: 500, damping: 40, bounce: 0 };

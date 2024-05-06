@@ -1,6 +1,7 @@
 "use client";
 
 import Spline from "@splinetool/react-spline";
+import { motion } from "framer-motion";
 
 const ContactRobot = () => {
    return (

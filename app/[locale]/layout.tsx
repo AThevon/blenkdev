@@ -38,7 +38,7 @@ export function generateStaticParams() {
 }
 
 
-const i18nNamespaces = ["home", "about", "services", "contact", "common"];
+const i18nNamespaces = ["home", "about", "services", "contact", "common", "privacy-policy"];
 
 
 export default async function RootLayout({
