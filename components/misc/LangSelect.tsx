@@ -45,16 +45,11 @@ export function LangSelect() {
    return (
       <>
          <Select onValueChange={handleChange} defaultValue={currentLocale}>
-            <motion.div
-               className="w-full"
-               whileHover={{ rotate: [0, 5, 0, -2, 0] }}
-               exit={{ rotate: 0 }}
-               transition={{ duration: 0.25 }}
-            >
+            <div className="w-full">
                <SelectTrigger>
                   <Image src={`/icons/flags/${currentLocale}-flag.svg`} width={24} height={24} alt="" className="w-8 h-5 rounded-[2px] object-cover" />
                </SelectTrigger>
-            </motion.div>
+            </div>
             <SelectContent align="end" className="w-[200px]">
                <SelectGroup>
                   <SelectLabel>Choose a language</SelectLabel>

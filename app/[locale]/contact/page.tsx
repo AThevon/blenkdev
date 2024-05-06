@@ -1,6 +1,6 @@
 import initTranslations from "@/app/i18n";
 import { ContactForm } from "@/components/contact/ContactForm";
-import LottiDiscuss from "@/components/contact/LottiDiscuss";
+import ContactRobot from "@/components/contact/ContactRobot";
 import { SocialsCards } from "@/components/contact/SocialsCards";
 import { SubmitContextProvider } from "@/components/contact/SubmitContext";
 import { PageWrapper } from "@/components/wrappers/PageWrapper";
@@ -17,7 +17,7 @@ export default async function Contact({ params: { locale } }: Params) {
                <ContactForm />
                <div className="h-full flex flex-col justify-between items-center">
                   <SocialsCards />
-                  {/* <LottiDiscuss /> */}
+                  <ContactRobot />
                </div>
             </section>
          </SubmitContextProvider>
