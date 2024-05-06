@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState, Suspense } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Player } from "@lordicon/react";
 import { useSubmitContext } from "@/components/contact/SubmitContext";
 import ICON from "@/public/lordicon/discussion.json";
@@ -50,14 +50,14 @@ const LottiDiscuss = () => {
 
    return (
       <div className="hidden lg:block translate-y-9">
-            {ICON && (
-               <Player
-                  ref={playerRef}
-                  icon={ICON}
-                  size={300}
-                  state={state}
-               />
-            )}
+         {ICON && (
+            <Player
+               ref={playerRef}
+               icon={ICON}
+               size={300}
+               state={state}
+            />
+         )}
       </div>
    );
 }

@@ -59,7 +59,7 @@ export const HoverEffect = ({
                   target={item?.link === "" ? "_self" : "_blank"}
                   onClick={() => {
                      if (item?.link === "") {
-                        toast({ title: t("no-link-title"), description: t("no-link-description"), })
+                        toast({ title: t("common:no-link-title"), description: t("common:no-link-description"), })
                      }
                   }}
                >
