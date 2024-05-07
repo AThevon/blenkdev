@@ -16,6 +16,7 @@ export default async function Home({ params: { locale } }: Params) {
             <Parallax />
             <hr className="-mt-6 mb-16 bg-neutral-800/20 dark:bg-neutral-50/20 h-[2px] w-[90%] max-w-[1500px] mx-auto rounded-xl" />
             <Comments />
+            <hr className="-mt-6 bg-neutral-800/20 dark:bg-neutral-50/20 h-[2px] w-[90%] max-w-[1500px] mx-auto rounded-xl" />
             <LampCta />
             {/* <hr className="my-[50rem] bg-neutral-800/20 dark:bg-neutral-50/20 h-[2px] w-[90%] max-w-[1500px] mx-auto rounded-xl" /> */}
         </PageWrapper>

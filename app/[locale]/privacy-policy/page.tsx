@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
    const { t } = useTranslation("privacy-policy");
 
    const email = "adrienthevon@gmail.com";
-   const lastUpdate = "05 Mai 2024";
+   const lastUpdate = "05/05/2024";
 
    return (
       <PageWrapper container>

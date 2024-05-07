@@ -10,7 +10,7 @@ const Footer = () => {
     const { t } = useTranslation("common");
     const pathname = usePathname();
     return (
-        <footer className={`relative flex items-end justify-center w-full h-24 px-4 p-2 ${getFirstPath(pathname, "/")  ? "bg-neutral-100 dark:bg-neutral-900" : ""}`}>
+        <footer className={`relative flex items-end justify-center w-full h-24 px-4 p-2 ${getFirstPath(pathname, "/") || getFirstPath(pathname, "/services") ? "bg-neutral-100 dark:bg-neutral-900" : ""}`}>
             <div className="w-full flex flex-col absolute left-1/2 -translate-x-1/2">
                 <div className="flex items-center justify-center gap-4">
                     <Link
