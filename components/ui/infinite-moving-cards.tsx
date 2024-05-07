@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -91,23 +90,23 @@ export const InfiniteMovingCards = ({
                   className="w-[350px] max-w-full relative flex flex-col justify-between rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 border flex-shrink-0 border-neutral-400 dark:border-neutral-700 px-8 py-6 md:w-[450px]"
                   key={item.name}
                >
-                     <div
-                        aria-hidden="true"
-                        className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-                     ></div>
-                     <span className=" relative z-20 text-sm leading-[1.6] font-normal text-black dark:text-white">
-                        {item.quote}
-                     </span>
-                     <div className="relative z-20 flex flex-row items-center justify-end">
-                        <span className="flex flex-col gap-1">
-                           <span className="text-sm leading-[1.6] text-neutral-500 font-bold ml-auto text-end">
-                              {item.name}
-                           </span>
-                           <span className=" text-sm leading-[1.6] text-neutral-500 font-bold text-end">
-                              {item.title}
-                           </span>
+                  <div
+                     aria-hidden="true"
+                     className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                  ></div>
+                  <span className=" relative z-20 text-sm leading-[1.6] font-normal text-black dark:text-white">
+                     {item.quote}
+                  </span>
+                  <div className="relative z-20 flex flex-row items-center justify-end">
+                     <span className="flex flex-col gap-1">
+                        <span className="text-sm leading-[1.6] text-neutral-500 font-bold ml-auto text-end">
+                           {item.name}
                         </span>
-                     </div>
+                        <span className=" text-sm leading-[1.6] text-neutral-500 font-bold text-end">
+                           {item.title}
+                        </span>
+                     </span>
+                  </div>
                </li>
             ))}
          </ul>

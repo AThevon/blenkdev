@@ -10,11 +10,12 @@ export default function PrivacyPolicy() {
    const lastUpdate = "05 Mai 2024";
 
    return (
-      <PageWrapper>
-         <div className="container mx-auto px-4 pt-44 pb-8 text-black dark:text-white">
+      <PageWrapper container>
+         <div className="mx-auto px-4 pt-44 pb-8 text-black dark:text-white">
             <div className="max-w-3xl mx-auto">
                <div className="mb-8">
                   <h1 className="text-4xl font-bold mb-4">{t("main-title")}</h1>
+                  <hr className="w-60 h-1 bg-neutral-400 dark:bg-neutral-500 mb-4" />
                   <p className="text-sm text-gray-500">{`${t("updated")} ${lastUpdate}`}</p>
                </div>
                <div className="mb-8">

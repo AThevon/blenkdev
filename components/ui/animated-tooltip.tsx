@@ -11,27 +11,11 @@ import { navlinks } from "@/data/navlinks";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { getFirstPath } from "@/utils/getFirstPath";
 
 export const AnimatedTooltip = () => {
    const pathname = usePathname();
    const { t } = useTranslation("common");
-
-   //!!!
-   function getFirstPath(path: string) {
-      if (pathname.split("/").length > 2) {
-         const cleanPathname = `/${pathname.split("/")[2]}`;
-         return cleanPathname === path;
-      }
-      const match = pathname.match(/^\/(\w{2})(\/|$)/);
-      const cleanPathname = match ? pathname.replace(match[0], '/') : pathname;
-      return cleanPathname === path;
-   }
-
-   // function getFirstPath(path: string) {
-   //    const match = pathname.match(/^\/(\w{2})\//);
-   //    const cleanPathname = match ? pathname.replace(match[0], '/') : pathname;
-   //    return cleanPathname === path;
-   //  }
 
    const activeLink = navlinks.find((link) => link.path === pathname);
    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -96,9 +80,9 @@ export const AnimatedTooltip = () => {
                   src={item.icon}
                   alt={item.title}
                   className={`object-contain bg-neutral-50 !dark:bg-neutral-800 p-3 object-center filter dark:invert
-                        hover:shadow-md rounded-2xl h-14 w-14 border-2 ${!getFirstPath(item.path) ? "group-hover:scale-110" : ""} z-10 group-hover:z-30 border-neutral-200 !dark:border-neutral-700 relative transition duration-200`}
+                        hover:shadow-md rounded-2xl h-14 w-14 border-2 ${!getFirstPath(pathname, item.path) ? "group-hover:scale-110" : ""} z-10 group-hover:z-30 border-neutral-200 !dark:border-neutral-700 relative transition duration-200`}
                />
-               {getFirstPath(item.path) ? (
+               {getFirstPath(pathname, item.path) ? (
                   <motion.span
                      layoutId="overline"
                      transition={{ type: "spring", damping: 20, stiffness: 200, duration: 0.5 }}

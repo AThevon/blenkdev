@@ -9,7 +9,7 @@ const DarkToggle = () => {
    return (
       <AnimatePresence>
          <motion.div
-            className="w-14 h-14 bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center cursor-pointer shadow-sm hover:shadow-md"
+            className="w-14 h-14 bg-neutral-50 dark:bg-neutral-950 flex items-center justify-center cursor-pointer shadow-sm hover:shadow-md"
             onClick={() => setIsDark(!isDark)}
             key={isDark.toString()}
             initial={{ scale: 0, rotate: 360, borderRadius: "50%" }}

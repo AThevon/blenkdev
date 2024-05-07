@@ -106,7 +106,7 @@ export const HeroParallax = ({
 };
 
 export const Header = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("home");
     const ref = React.useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
