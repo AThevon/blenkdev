@@ -29,8 +29,8 @@ const fontVariables = `${mainFont.variable} ${secondFont.variable}`;
 
 
 export const metadata: Metadata = {
-   title: "BlenkTech",
-   description: "BlenkTech is a software development company.",
+   title: "BlenkDev",
+   description: "BlenkDev is a software development company.",
 };
 
 export function generateStaticParams() {

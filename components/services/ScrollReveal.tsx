@@ -11,9 +11,9 @@ const services = [
         content: (
             <div className="h-full w-full  flex items-center justify-center text-white">
                 <Image
-                    src="/waves-bg.svg"
-                    width={300}
-                    height={300}
+                    src="/services-1.png"
+                    width={1400}
+                    height={1400}
                     className="h-full w-full object-cover"
                     alt="linear board demo"
                 />
@@ -28,9 +28,9 @@ const services = [
         content: (
             <div className="h-full w-full  flex items-center justify-center text-white">
                 <Image
-                    src="/waves-bg.svg"
-                    width={300}
-                    height={300}
+                    src="/services-2.png"
+                    width={1400}
+                    height={1400}
                     className="h-full w-full object-cover"
                     alt="linear board demo"
                 />

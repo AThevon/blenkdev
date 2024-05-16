@@ -13,6 +13,13 @@ export const projects = [
             "/projects/background-coque-en-bois.jpg",
         icon: "/projects/logo-coque-en-bois.png",
     },
+    {
+        title: "FindMyIP",
+        link: "https://find-my-ip-lyart.vercel.app/",
+        thumbnail:
+            "/projects/background-findmyip.png",
+        icon: "/projects/logo-findmyip.png",
+    },
    //  {
    //      title: "Portfolio AThevon",
    //      link: "https://adrienthevon.fr",

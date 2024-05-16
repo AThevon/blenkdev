@@ -53,7 +53,7 @@ const Logo = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ type: "spring", damping: 10, stiffness: 100, mass: 1, delay: 1 }}
                 >
-                    BlenkTech
+                    BlenkDev
                 </motion.h1>
             </motion.div>
         </AnimatePresence >
