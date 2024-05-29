@@ -7,18 +7,24 @@ import { useTranslation } from "react-i18next";
 
 export function BeamContainer() {
   const { t } = useTranslation("services");
+
+  function addBreaks(text: string) {
+    // breakline every . character
+    return text.split(".").map((item, index) => (
+      <p key={`text-${index}`} className="mb-4">
+        {item}
+      </p>
+    ));
+  }
+
   return (
     <TracingBeam className="px-6">
       <div className="max-w-2xl mx-auto antialiased pt-4 relative">
         {content.map((item, index) => (
           <div key={`content-${index}`} className="mb-20">
-            <h2 className="bg-black capitalize dark:bg-white text-white dark:text-black rounded-full text-sm w-fit px-4 py-1 mb-4">
-              {t(`${item.badge}`)}
-            </h2>
-
-            <p className={twMerge("text-xl mb-4")}>
+            <h2 className="bg-neutral-800  dark:bg-neutral-200 text-neutral-100 dark:text-neutral-800 rounded-full capitalize text-lg w-fit px-7 py-3 mb-4">
               {t(`${item.title}`)}
-            </p>
+            </h2>
 
             <div className="text-lg dark:text-neutral-100">
               {item?.image && (
@@ -30,7 +36,7 @@ export function BeamContainer() {
                   className="rounded-lg mb-10 object-cover"
                 />
               )}
-              {t(`${item.description}`)}
+              {addBreaks(t(`${item.description}`))}
             </div>
           </div>
         ))}
@@ -75,5 +81,13 @@ const content = [
     image:
       "/services-2.png",
   },
-    
+  {
+    title: "title-6",
+    description: "text-6",
+    badge: "word-6",
+    image:
+      "/services-2.png",
+  },
+
+
 ];
