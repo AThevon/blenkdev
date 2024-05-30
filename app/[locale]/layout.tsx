@@ -10,31 +10,46 @@ import { Toaster } from "@/components/ui/toaster";
 import { DarkContextProvider } from "@/components/wrappers/DarkContext";
 
 const mainFont = Kodchasan({
-   subsets: ["latin"],
-   weight: ["400", "500", "600", "700"],
-   style: ["normal"],
-   display: "swap",
-   variable: "--main-font",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--main-font",
 });
 
 const secondFont = Montserrat({
-   subsets: ["latin"],
-   weight: ["400", "500", "600", "700"],
-   style: ["normal"],
-   display: "swap",
-   variable: "--second-font",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal"],
+  display: "swap",
+  variable: "--second-font",
 });
 
 const fontVariables = `${mainFont.variable} ${secondFont.variable}`;
 
 
 export const metadata: Metadata = {
-   title: "BlenkDev",
-   description: "BlenkDev is a software development company.",
+  title: "BlenkDev",
+  description: "BlenkDev is a software development company.",
+  openGraph: {
+    type: "website",
+    url: "https://blenkdev.fr",
+    title: "BlenkDev - Software Development Company",
+    description: "BlenkDev is a software development company own by Adrien Thevon, a fullstack web developer.",
+    images: [
+      {
+        url: "https://postimg.cc/1gS4dYZF",
+        width: 3000,
+        height: 1800,
+        alt: "BlenkDev - Software Development Company",
+      },
+    ],
+  },
+
 };
 
 export function generateStaticParams() {
-   return i18nConfig.locales.map(locale => ({ locale }));
+  return i18nConfig.locales.map(locale => ({ locale }));
 }
 
 
@@ -42,30 +57,30 @@ const i18nNamespaces = ["home", "about", "services", "contact", "common", "priva
 
 
 export default async function RootLayout({
-   children,
-   params: { locale },
+  children,
+  params: { locale },
 }: Readonly<{
-   children: React.ReactNode;
-   params: { locale: string };
+  children: React.ReactNode;
+  params: { locale: string };
 }>) {
 
-   const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
-   return (
-      <html lang={locale} dir={dir(locale)}>
+  return (
+    <html lang={locale} dir={dir(locale)}>
 
-         <TranslationsProvider
-            namespaces={i18nNamespaces}
-            locale={locale}
-            resources={resources}
-         >
-            <DarkContextProvider>
-               <AppWrapper fonts={fontVariables}>
-                  <Toaster />
-                  {children}
-               </AppWrapper>
-            </DarkContextProvider>
-         </TranslationsProvider>
-      </html>
-   );
+      <TranslationsProvider
+        namespaces={i18nNamespaces}
+        locale={locale}
+        resources={resources}
+      >
+        <DarkContextProvider>
+          <AppWrapper fonts={fontVariables}>
+            <Toaster />
+            {children}
+          </AppWrapper>
+        </DarkContextProvider>
+      </TranslationsProvider>
+    </html>
+  );
 }

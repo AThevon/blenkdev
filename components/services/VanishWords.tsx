@@ -2,20 +2,19 @@
 
 import { FlipWords } from "@/components/ui/flip-words";
 import { useTranslation } from "react-i18next";
+import useIsMobile from "@/hooks/useIsMobile";
 
 export function VanishWords() {
   const { t } = useTranslation("services");
   const words = [t("word-1"), t("word-2"), t("word-3"), t("word-4"), t("word-5")];
 
-  function isMobile() {
-    return window.innerWidth < 640;
-  }
+  const isMobile = useIsMobile();
 
   return (
     <div className="h-screen text-center sm:text-start flex justify-center items-center px-4">
       <div className="text-3xl md:text-5xl mx-auto font-sans text-neutral-600 dark:text-neutral-400">
         {t("main-title-1")} <br className=" block sm:hidden" />
-        {isMobile() ? (
+        {isMobile ? (
           <>
             <div className="w-full h-[3rem] text-center flex flex-col justify-center items-center">
               <FlipWords

@@ -21,6 +21,10 @@ const nextConfig = {
             },
         ];
     },
+    reactStrictMode: true,
+    images: {
+        domains: ['blenkdev.fr'],
+    },
 };
 
 export default nextConfig;

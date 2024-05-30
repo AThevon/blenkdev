@@ -50,7 +50,7 @@ export function LangSelect() {
             <Image src={`/icons/flags/${currentLocale}-flag.svg`} width={24} height={24} alt="" className="w-8 h-5 rounded-[2px] object-cover" />
           </SelectTrigger>
         </div>
-        <SelectContent align="end" className="translate-x-[30%] w-[200px]">
+        <SelectContent align="end" className="translate-x-[30%] md:translate-x-0 w-[200px]">
           <SelectGroup>
             <SelectLabel>Choose a language</SelectLabel>
             {langs.map((lang) => (

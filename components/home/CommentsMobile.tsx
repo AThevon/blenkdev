@@ -12,7 +12,6 @@ export function CommentsMobile() {
   const { t } = useTranslation(['home', 'common']);
   return (
     <>
-      <h2 className="text-3xl font-bold text-center mt-12 mb-4 capitalize">{t("common:testimonials")}</h2>
       <Swiper
         grabCursor={true}
         effect={'creative'}
