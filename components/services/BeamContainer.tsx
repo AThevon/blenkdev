@@ -22,7 +22,7 @@ export function BeamContainer() {
       <div className="max-w-2xl mx-auto antialiased pt-4 relative">
         {content.map((item, index) => (
           <div key={`content-${index}`} className="mb-20">
-            <h2 className="bg-neutral-800  dark:bg-neutral-200 text-neutral-100 dark:text-neutral-800 rounded-full capitalize text-lg w-fit px-7 py-3 mb-4">
+            <h2 className="bg-neutral-800 mx-auto md:mx-0  dark:bg-neutral-200 text-neutral-100 dark:text-neutral-800 rounded-full capitalize text-lg w-fit px-7 py-3 mb-4">
               {t(`${item.title}`)}
             </h2>
 

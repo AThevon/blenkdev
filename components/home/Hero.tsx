@@ -26,7 +26,7 @@ export function Hero() {
   return (
     <>
       <motion.div
-        className="fixed h-screen w-full object-cover object-center top-0 -z-1"
+        className="hidden md:block fixed h-screen w-full object-cover object-center top-0 -z-1"
         initial={{ opacity: 0, x: 800, y: 0, rotate: 0 }}
         animate={{ opacity: 1, x: 200, y: 50, rotate: -15 }}
         transition={{ delay: 1, duration: 3, type: "spring", damping: 15, stiffness: 100 }}
@@ -40,7 +40,7 @@ export function Hero() {
           className="h-[130%] w-full object-cover"
         />
       </motion.div>
-      <div className="flex justify-start mx-auto px-40 max-w-[2000px] w-full h-screen">
+      <div className="flex text-center sm:text-start justify-center sm:justify-start mx-auto px-8 sm:px-40 max-w-[2000px] w-full h-screen">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -51,7 +51,7 @@ export function Hero() {
             damping: 10,
             stiffness: 100,
           }}
-          className="relative w-[60%]"
+          className="hidden lg:block relative w-[60%]"
         >
           <Suspense fallback={null}>
             <Spline
@@ -72,7 +72,7 @@ export function Hero() {
         >
           {titleArray.map((text, index) => (
             <motion.h2
-              className="text-6xl font-bold"
+              className="text-4xl sm:text-6xl w-full font-bold"
               key={index}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scaleX: 1.2, scale: 1 }}
@@ -81,12 +81,12 @@ export function Hero() {
               {text}
             </motion.h2>
           ))}
-          <p className="py-4 text-lg">
+          <p className="py-4 w-full text-center sm:text-start text-lg">
             {t("hero-sentence")}
           </p>
           <Button
             className="bg-neutral-50/90 dark:bg-neutral-950/85 dark:text-white font-semibold uppercase px-8 text-lg"
-            containerClassName="w-auto h-16"
+            containerClassName="w-full sm:w-auto h-16"
             onClick={() => {
               window.scrollTo({
                 top: window.innerHeight,

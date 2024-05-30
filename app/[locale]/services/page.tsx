@@ -16,7 +16,9 @@ export default async function Services({ params: { locale } }: Params) {
       <VanishWords />
       {/* <ScrollReveal /> */}
       <BeamContainer />
-      <GoUp />
+      <div className="hidden sm:block">
+        <GoUp />
+      </div>
     </PageWrapper>
   );
 }

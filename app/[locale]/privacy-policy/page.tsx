@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
 
   return (
     <PageWrapper container>
-      <div className="mx-auto px-4 pt-44 pb-8 text-black dark:text-white">
+      <div className="mx-auto px-0 sm:px-4 pt-44 pb-8 text-black dark:text-white">
         <div className="max-w-3xl mx-auto">
           <div className="mb-8">
             <h1 className="text-4xl font-bold mb-4">{t("main-title")}</h1>
@@ -51,11 +51,6 @@ export default function PrivacyPolicy() {
                 <li>
                   <a href={`mailto:${email}`} className="!text-blue-700 dark:!text-blue-300 hover:underline" target="_blank" rel="noopener noreferrer">
                     {email}
-                  </a>
-                </li>
-                <li>
-                  <a href="+33761238449" className="!text-blue-700 dark:!text-blue-300 hover:underline" target="_blank" rel="noopener noreferrer">
-                    07 61 23 84 49
                   </a>
                 </li>
               </ul>

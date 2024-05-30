@@ -10,8 +10,8 @@ const Footer = () => {
   const { t } = useTranslation("common");
   const pathname = usePathname();
   return (
-    <footer className={`relative flex items-end justify-center w-full h-24 px-4 p-2 ${getFirstPath(pathname, "/") ? "bg-neutral-100 dark:bg-neutral-900" : ""}`}>
-      <div className="w-full flex flex-col absolute left-1/2 -translate-x-1/2">
+    <footer className={`relative flex flex-col sm:flex-row items-end justify-center w-full h-24 px-4 p-2 ${getFirstPath(pathname, "/") ? "bg-neutral-100 dark:bg-neutral-900" : ""}`}>
+      <div className="w-full flex flex-col sm:absolute sm:left-1/2 sm:-translate-x-1/2">
         <div className="flex items-center justify-center gap-4">
           <Link
             href="/privacy-policy"
@@ -33,8 +33,8 @@ const Footer = () => {
           ))}
         </nav>
       </div>
-      <div className="ml-auto">
-        <p className="text-sm text-neutral-500 dark:text-neutral-400">© 2024 BlenkDev</p>
+      <div className="sm:ml-auto w-full">
+        <p className="text-sm w-full text-center sm:text-end text-neutral-500 dark:text-neutral-400">© 2024 BlenkDev</p>
       </div>
     </footer>
   );
