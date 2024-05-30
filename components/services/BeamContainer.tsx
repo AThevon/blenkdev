@@ -30,7 +30,7 @@ export function BeamContainer() {
               {item?.image && (
                 <Image
                   src={item.image}
-                  alt="blog thumbnail"
+                  alt=""
                   height="1000"
                   width="1000"
                   className="rounded-lg mb-10 object-cover"
@@ -51,42 +51,42 @@ const content = [
     description: "text-1",
     badge: "word-1",
     image:
-      "/services-1.png",
+      "/services/services-1.webp",
   },
   {
     title: "title-2",
     description: "text-2",
     badge: "word-2",
     image:
-      "/services-2.png",
+      "/services/services-2.webp",
   },
   {
     title: "title-3",
     description: "text-3",
     badge: "word-3",
     image:
-      "/services-2.png",
+      "/services/services-3.webp",
   },
   {
     title: "title-4",
     description: "text-4",
     badge: "word-4",
     image:
-      "/services-2.png",
+      "/services/services-4.webp",
   },
   {
     title: "title-5",
     description: "text-5",
     badge: "word-5",
     image:
-      "/services-2.png",
+      "/services/services-5.webp",
   },
   {
     title: "title-6",
     description: "text-6",
     badge: "word-6",
     image:
-      "/services-2.png",
+      "/services/services-6.webp",
   },
 
 

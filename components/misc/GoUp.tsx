@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { CornerRightUp } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -8,7 +9,7 @@ const GoUp = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 2000) {
+      if (window.scrollY > 1000) {
         setShow(true);
       } else {
         setShow(false);
@@ -24,13 +25,22 @@ const GoUp = () => {
   };
 
   return (
-    <button
-      className={`fixed right-4 z-50 flex justify-center items-center ml-auto mr-10 w-16 h-16 bg-neutral-800 dark:bg-neutral-200 rounded-full transition-all duration-300 ease-in-out hover:scale-110 ${show ? 'bottom-20' : '-bottom-20'}`}
-      onClick={handleClick}
-    >
-      <CornerRightUp size={24} className="text-neutral-100 dark:text-neutral-800" />
-    </button>
-
+    <AnimatePresence>
+      {show && (
+        <motion.button
+          className={`fixed bottom-20 right-4 z-50 flex justify-center items-center ml-auto mr-10 w-16 h-16 bg-neutral-800 dark:bg-neutral-200 rounded-full $`}
+          onClick={handleClick}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0, transition: { duration: 0.2 } }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ duration: 0.2, type: 'spring', stiffness: 460, damping: 14 }}
+        >
+          <CornerRightUp size={24} className="text-neutral-100 dark:text-neutral-800" />
+        </motion.button>
+      )}
+    </AnimatePresence>
   );
 }
 
