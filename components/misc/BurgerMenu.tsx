@@ -1,4 +1,3 @@
-// components/BurgerMenu.js
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -7,6 +6,8 @@ import { LangSelect } from "./LangSelect";
 import DarkToggle from "./DarkToggle";
 import Image from "next/image";
 import { MenuIcon, XIcon } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { getFirstPath } from "@/utils/getFirstPath";
 
 const menuVariants = {
   open: {
@@ -31,6 +32,11 @@ const menuVariants = {
 
 export function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathname = usePathname();
+  // get actual path
+  const router = useRouter();
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -60,11 +66,13 @@ export function BurgerMenu() {
               <motion.li key={link.path} whileTap={{ scale: .9 }}>
                 <Link
                   href={link.path}
-                  className="flex items-center text-3xl gap-4 font-semibold text-neutral-800 dark:text-neutral-200"
+                  className={`flex items-center text-3xl gap-4 font-semibold text-neutral-800 dark:text-neutral-200"
+                  ${getFirstPath(pathname, link.path) ? "!text-myyellow-500" : ""}`}
+
                   onClick={toggleMenu}
 
                 >
-                  <Image src={link.icon} alt={link.title} width={30} height={30} className="dark:invert" />
+                  <Image src={link.icon} alt={link.title} width={30} height={30} className={`dark:invert`} />
                   {link.title}
                 </Link>
               </motion.li>
@@ -74,10 +82,10 @@ export function BurgerMenu() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 0.7 }}
             exit={{ opacity: 0 }}
             onClick={toggleMenu}
-            className="fixed top-0 left-0 w-full h-full backdrop-blur-lg bg-neutral-950 opacity-80 z-30"
+            className="fixed top-0 left-0 w-full h-full bg-neutral-800 z-30"
           ></motion.div>
         )}
       </div>
