@@ -28,7 +28,6 @@ export function ProjectsMobile() {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        speed={800}
         modules={[EffectCube, Autoplay]}
         className="h-[30rem]"
       >

@@ -32,7 +32,6 @@ export function CommentsMobile() {
           delay: 8000,
           disableOnInteraction: false,
         }}
-        speed={800}
         modules={[EffectCreative, Autoplay]}
         className="h-[35rem] w-full bg-gradient-to-b from-transparent to-neutral-100 dark:from-transparent dark:to-neutral-900"
       >
