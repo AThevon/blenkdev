@@ -35,15 +35,20 @@ export function ProjectsMobile() {
           <SwiperSlide key={index} className="relative w-full h-full p-6 bg-neutral-900 flex flex-col items-center justify-center">
             <Image src={project.thumbnail} alt={project.title} width={300} height={300} className="absolute top-0 left-0 w-full h-full object-cover -z-20" />
             <span className="absolute top-0 left-0 w-full h-full bg-neutral-950 opacity-60 -z-10" />
-            <h3 className="text-2xl font-medium text-center px-6 sm:px-0 sm:ml-12 lg:ml-28 mb-4 sm:mb-10 text-neutral-200">
+            <h3 className="text-2xl font-medium text-center px-6 sm:px-0 mb-4 sm:mb-10 text-neutral-200">
               {project.title}
             </h3>
+            <p
+              className='text-md text-neutral-300 drop-shadow font-medium text-center px-6 sm:px-0 mb-4 sm:mb-10'
+            >{t(project.description)}</p>
             <Image src={project.icon} alt={project.title} width={200} height={200} className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' />
-            <Link href={project.link} key={index} className='absolute bottom-8 left-1/2 -translate-x-1/2'>
-              <Button className="text-xl w-[10rem] bg-neutral-800 p-4">
-                Visit
-              </Button>
-            </Link>
+            {project.link && (
+              <Link href={project.link} key={index} className='absolute bottom-8 left-1/2 -translate-x-1/2'>
+                <Button className="text-xl w-[10rem] bg-neutral-800 p-4">
+                  Visit
+                </Button>
+              </Link>
+            )}
           </SwiperSlide>
         ))}
       </Swiper >

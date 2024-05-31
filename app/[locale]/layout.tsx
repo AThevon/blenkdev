@@ -45,7 +45,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-
 };
 
 export function generateStaticParams() {

@@ -85,7 +85,8 @@ export function Hero() {
             {t("hero-sentence")}
           </p>
           <Button
-            className="bg-neutral-50/90 dark:bg-neutral-950/85 dark:text-white font-semibold uppercase px-8 text-lg"
+            className="bg-neutral-50/90 dark:bg-neutral-950/85 dark:text-white border border-ring/30
+            font-semibold uppercase px-8 text-lg"
             containerClassName="w-full sm:w-auto h-16"
             onClick={() => {
               window.scrollTo({

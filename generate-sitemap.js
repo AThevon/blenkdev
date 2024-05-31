@@ -18,6 +18,11 @@ const sitemap = `
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
+    <url>
+      <loc>https://blenkdev.fr/projects</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
     <!-- Ajoutez d'autres URLs ici -->
   </urlset>
 `;

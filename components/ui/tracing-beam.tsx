@@ -22,7 +22,7 @@ export const TracingBeam = ({
   const pathname = usePathname();
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ["start center", "end start"],
   });
 
   const contentRef = useRef<HTMLDivElement>(null);
@@ -87,7 +87,7 @@ export const TracingBeam = ({
             viewBox={`0 0 20 ${svgHeight}`}
             width="20"
             height={svgHeight} // Set the SVG height
-            className=" ml-4 block max-h-[300rem] md:max-h-[320rem]"
+            className=" ml-4 block max-h-[320rem] md:max-h-[350rem]"
             aria-hidden="true"
           >
             <motion.path

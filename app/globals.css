@@ -114,4 +114,13 @@
       background: -webkit-linear-gradient(-45deg, #262626, #171717);
       background: linear-gradient(-45deg, #262626, #171717);
    }
+
+   .no-visible-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      -webkit-overflow-scrolling: touch;
+   }
+   .no-visible-scrollbar::-webkit-scrollbar {
+      display: none;
+   }
 }

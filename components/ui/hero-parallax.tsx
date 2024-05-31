@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { toast } from "@/components/ui/use-toast";
 
 export const HeroParallax = ({
   products,
@@ -152,6 +153,7 @@ export const ProductCard = ({
   };
   translate: MotionValue<number>;
 }) => {
+  const { t } = useTranslation("common");
   return (
     <motion.div
       style={{
@@ -169,7 +171,14 @@ export const ProductCard = ({
       <Link
         href={product.link}
         target="_blank"
-        className="block group-hover/product:shadow-2xl"
+        className={`block group-hover/product:shadow-2xl${product.link ? " cursor-pointer" : " cursor-default"}`}
+        onClick={(e) => {
+          if (!product.link) {
+            e.preventDefault();
+            toast({ title: t("no-link-title"), description: t("no-link-description"), })
+          }
+        }
+        }
       >
         <Image
           src={product.thumbnail}

@@ -41,7 +41,7 @@ export default async function Home({ params: { locale } }: Params) {
         </div>
         <div className="block lg:hidden">
           <ProjectsMobile />
-          <span className="block bg-neutral-900 w-full h-[5rem]" />
+          <span className="block bg-neutral-100 dark:bg-neutral-900 w-full h-[5rem]" />
           <CommentsMobile />
         </div>
         <hr className="-mt-6 bg-neutral-800/20 dark:bg-neutral-50/20 h-[2px] w-[90%] max-w-[1500px] mx-auto rounded-xl" />

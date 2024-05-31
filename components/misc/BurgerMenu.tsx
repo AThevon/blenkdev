@@ -66,13 +66,11 @@ export function BurgerMenu() {
               <motion.li key={link.path} whileTap={{ scale: .9 }}>
                 <Link
                   href={link.path}
-                  className={`flex items-center text-3xl gap-4 font-semibold text-neutral-800 dark:text-neutral-200"
+                  className={`flex items-center !text-3xl gap-4 font-semibold text-neutral-800 dark:text-neutral-200"
                   ${getFirstPath(pathname, link.path) ? "!text-myyellow-500" : ""}`}
-
                   onClick={toggleMenu}
-
                 >
-                  <Image src={link.icon} alt={link.title} width={30} height={30} className={`dark:invert`} />
+                  {link.icon}
                   {link.title}
                 </Link>
               </motion.li>

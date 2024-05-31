@@ -1,20 +1,16 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { twMerge } from "tailwind-merge";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { useTranslation } from "react-i18next";
+import { list } from "postcss";
 
 export function BeamContainer() {
   const { t } = useTranslation("services");
 
-  function addBreaks(text: string) {
-    // breakline every . character
-    return text.split(".").map((item, index) => (
-      <p key={`text-${index}`} className="mb-4">
-        {item}
-      </p>
-    ));
+  function formatListItem(text: string) {
+    const [boldText, normalText] = text.split(/:(.+)/);
+    return (<> <span className="font-bold">{boldText}:</span>{normalText} </>);
   }
 
   return (
@@ -36,7 +32,14 @@ export function BeamContainer() {
                   className="rounded-lg mb-10 object-cover"
                 />
               )}
-              {addBreaks(t(`${item.description}`))}
+              {item.description && t(`${item.description}`)}
+              {item.list && (
+                <ul className="list-disc pl-6 flex flex-col gap-4 dark:text-neutral-100 text-neutral-800">
+                  {item.list.map((listItem, index) => (
+                    <li key={`list-item-${index}`}>{formatListItem(t(`${listItem}`))}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         ))}
@@ -49,45 +52,43 @@ const content = [
   {
     title: "title-1",
     description: "text-1",
-    badge: "word-1",
     image:
       "/services/services-1.webp",
   },
   {
     title: "title-2",
-    description: "text-2",
-    badge: "word-2",
+    list: ["text-2.1", "text-2.2", "text-2.3"],
     image:
       "/services/services-2.webp",
   },
   {
     title: "title-3",
-    description: "text-3",
-    badge: "word-3",
+    list: ["text-3.1", "text-3.2", "text-3.3"],
     image:
       "/services/services-3.webp",
   },
   {
     title: "title-4",
-    description: "text-4",
-    badge: "word-4",
+    list: ["text-4.1", "text-4.2", "text-4.3"],
     image:
       "/services/services-4.webp",
   },
   {
     title: "title-5",
-    description: "text-5",
-    badge: "word-5",
+    list: ["text-5.1", "text-5.2", "text-5.3"],
     image:
       "/services/services-5.webp",
   },
   {
     title: "title-6",
-    description: "text-6",
-    badge: "word-6",
+    list: ["text-6.1", "text-6.2", "text-6.3"],
     image:
       "/services/services-6.webp",
   },
-
-
+  {
+    title: "title-7",
+    list: ["text-7.1", "text-7.2", "text-7.3"],
+    image:
+      "/services/services-7.webp",
+  },
 ];
