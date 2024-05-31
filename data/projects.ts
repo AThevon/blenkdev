@@ -1,15 +1,21 @@
 export const projects = [
+  {
+     title: "Jynka",
+     link: "https://jynka.vercel.app/",
+     thumbnail: "/projects/background-jynka.png",
+     icon: "/projects/logo-jynka.png",
+  },
+  {
+     title: "DigiChat",
+     link: "https://digichat.vercel.app/",
+     thumbnail: "/projects/background-digichat.png",
+     icon: "/projects/logo-digichat.png",
+  },
    {
       title: "Artkansia",
       link: "https://theo-perrin-portfolio.vercel.app",
       thumbnail: "/projects/background-artkansia.png",
-      icon: "/projects/icon-artkansia.png",
-   },
-   {
-      title: "DigiChat",
-      link: "https://digichat.vercel.app/",
-      thumbnail: "/projects/background-digichat.png",
-      icon: "/projects/icon-digichat.png",
+      icon: "/projects/logo-artkansia.png",
    },
    {
       title: "Coque En Bois",
