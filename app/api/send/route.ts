@@ -1,31 +1,52 @@
-import { EmailTemplate } from "@/components/misc/EmailTemplate";
-import { NextRequest } from "next/server";
-import { Resend } from "resend";
+import { generateEmailTemplate } from "@/components/misc/EmailTemplate";
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer, { Transporter } from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+interface EmailBody {
+   firstName: string;
+   lastName: string;
+   email: string;
+   content: string;
+}
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
    try {
-      const body = await req.json();
+      const body: EmailBody = await req.json();
       const { firstName, lastName, email, content } = body;
-      const { data, error } = await resend.emails.send({
-         from: `${firstName} ${lastName} <contact@blenkdev.fr>`,
-         to: [process.env.EMAIL_TO as string],
+
+      // Configurez le transporteur SMTP
+      const transporter: Transporter = nodemailer.createTransport({
+         host: process.env.SMTP_HOST,
+         port: parseInt(process.env.SMTP_PORT || "587", 10),
+         secure: false, // true pour le port 465, false pour les autres ports
+         auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+         },
+      });
+
+      // Générer le contenu HTML de l'e-mail
+      const emailHtml = generateEmailTemplate({
+         firstName: firstName,
+         lastName: lastName,
+         email: email,
+         content: content,
+      });
+
+      // Configurez l'e-mail
+      const mailOptions = {
+         from: `${firstName} ${lastName} <${process.env.SMTP_USER}>`,
+         to: process.env.SMTP_USER,
          subject: "BlenkDev -> Nouveau Message du Website!",
-         react: EmailTemplate({
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            content: content,
-         }),
-      } as any);
+         html: emailHtml,
+      };
 
-      if (error) {
-         return Response.json({ error }, { status: 500 });
-      }
+      // Envoyez l'e-mail
+      const info = await transporter.sendMail(mailOptions);
 
-      return Response.json(data);
-   } catch (error) {
-      return Response.json({ error }, { status: 500 });
+      return NextResponse.json({ message: "Email sent", info });
+   } catch (error: any) {
+      console.error("Error sending email:", error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
    }
 }

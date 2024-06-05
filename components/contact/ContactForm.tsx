@@ -34,13 +34,6 @@ export function ContactForm() {
     setFormData({ ...formData, [id]: value, });
   };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   toast({ title: t("toast-submitted-title"), description: t("toast-submitted-description") });
-  //   setIsSubmit(true);
-  // }
-
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     if (isSubmitting) return;
@@ -62,6 +55,8 @@ export function ContactForm() {
 
       if (response.ok) {
         toast({ title: t("toast-submitted-title"), description: t("toast-submitted-description") });
+        setIsSubmit(true);
+        setFormData({ firstName: "", lastName: "", email: "", content: "" });
       } else {
         toast({ title: t("toast-error-title"), description: t("toast-error-description"), variant: "destructive" });
       }
@@ -141,11 +136,11 @@ export function ContactForm() {
           disabled={isSubmitting}
         >
           {isSubmitting ? (
-            <LoaderCircleIcon className="transition-all animate-spin mx-auto h-6 w-6 text-myyellow-500" />
+            <LoaderCircleIcon className="transition-all animate-spin mx-auto h-6 w-6 text-neutral-500" />
           ) : (
-            <span className="flex items-center gap-3 justify-center">
+            <span className="flex items-center gap-3 justify-center text-neutral-200">
               {t("contact-me")}
-              <MoveRightIcon className="h-5 w-5 text-white transition-all duration-300 group-hover/btn:translate-x-3" />
+              <MoveRightIcon className="h-5 w-5 text-neutral-200 transition-all duration-300 group-hover/btn:translate-x-3" />
             </span>
           )}
           {!isSubmitting && <BottomGradient />}
