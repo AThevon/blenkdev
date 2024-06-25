@@ -14,7 +14,7 @@ export default async function Home({ params: { locale } }: Params) {
 
   const pageTitle = "Adrien Thevon - Développeur Web Fullstack | BlenkDev";
   const pageDescription = "Bienvenue sur le portfolio de Adrien Thevon, développeur web fullstack et fondateur de BlenkDev. Découvrez mes projets et compétences en développement web.";
-  const imageUrl = "/blenkdev-thumbnail.png";
+  const imageUrl = "https://postimg.cc/1gS4dYZF";
   const pageUrl = "https://blenkdev.fr";
 
   return (

@@ -4,7 +4,7 @@ import Head from "next/head";
 
 const pageTitle = "Projects | Adrien Thevon | BlenkDev";
 const pageDescription = "Discover some of the projects I have worked on, from web applications to UX/UI design.";
-const imageUrl = "/blenkdev-thumbnail.png";
+const imageUrl = "https://postimg.cc/1gS4dYZF";
 const pageUrl = "https://blenkdev.fr";
 
 
