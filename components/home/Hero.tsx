@@ -2,10 +2,10 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/moving-border";
-import Spline from "@splinetool/react-spline";
+import dynamic from "next/dynamic";
 import { useTranslation } from "react-i18next";
 import { Suspense } from "react";
-import dynamic from "next/dynamic";
+import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   const { t } = useTranslation("home");
@@ -13,6 +13,9 @@ export function Hero() {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "150%"]);
   const opacity = useTransform(scrollYProgress, [0.5, 0.55], [1, 0]);
   const scale = useTransform(scrollYProgress, [0.55, 0.6], [1, 0]);
+
+  const arrowOpacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const arrowWidth = useTransform(scrollYProgress, [0, 0.05], ["5rem", "1rem"]);
 
   const titleData = t("hero-title");
   const titleArray = titleData.split(" ");
@@ -98,8 +101,33 @@ export function Hero() {
             {t("hero-cta")}
           </Button>
         </motion.div>
-
       </div>
+
+      <motion.div
+        className="fixed bottom-4 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.5, duration: 0.5 }}
+        style={{
+          opacity: arrowOpacity,
+          width: arrowWidth,
+        }}
+      >
+        <motion.div
+          className="w-full h-full flex items-center justify-center"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 1 }}
+          transition={{ type: "spring", damping: 10, stiffness: 300, mass: .8 }}
+          onClick={() => {
+            window.scrollTo({
+              top: window.innerHeight,
+              behavior: "smooth",
+            });
+          }}
+        >
+          <ChevronDown className="h-full w-full text-neutral-700 dark:text-neutral-200 scale-y-50 -skew-y-1" strokeWidth={1.2} />
+        </motion.div>
+      </motion.div>
     </>
   );
 }

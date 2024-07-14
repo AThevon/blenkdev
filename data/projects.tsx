@@ -33,12 +33,12 @@ export const projects: Project[] = [
     thumbnail: "/projects/background-coque-en-bois.png",
     icon: "/projects/logo-coque-en-bois.png",
   },
-  {
-    title: "FindMyIP",
-    value: "findmyip",
-    description: "description-findmyip",
-    link: "https://find-my-ip-lyart.vercel.app/",
-    thumbnail: "/projects/background-findmyip.png",
-    icon: "/projects/logo-findmyip.png",
-  },
+  // {
+  //   title: "FindMyIP",
+  //   value: "findmyip",
+  //   description: "description-findmyip",
+  //   link: "https://find-my-ip-lyart.vercel.app/",
+  //   thumbnail: "/projects/background-findmyip.png",
+  //   icon: "/projects/logo-findmyip.png",
+  // },
 ];

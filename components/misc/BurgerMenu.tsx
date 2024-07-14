@@ -4,7 +4,6 @@ import Link from "next/link";
 import { navlinks } from "@/data/navlinks";
 import { LangSelect } from "./LangSelect";
 import DarkToggle from "./DarkToggle";
-import Image from "next/image";
 import { MenuIcon, XIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { getFirstPath } from "@/utils/getFirstPath";
@@ -70,7 +69,9 @@ export function BurgerMenu() {
                   ${getFirstPath(pathname, link.path) ? "!text-myyellow-500" : ""}`}
                   onClick={toggleMenu}
                 >
-                  {link.icon}
+                  <div className="w-10 h-10">
+                    {link.icon}
+                  </div>
                   {link.title}
                 </Link>
               </motion.li>

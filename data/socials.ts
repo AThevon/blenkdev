@@ -16,7 +16,7 @@ const socials = [
    {
       title: "Malt",
       description: "malt-description",
-      link: "",
+      link: "https://www.malt.fr/profile/adrienthevon",
       logo: "/malt-logo.svg"
    },
 ]
