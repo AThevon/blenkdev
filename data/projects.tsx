@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: "V.Denay",
     value: "v-denay",
     description: "description-v-denay",
-    link: "https://v-denay-portfolio.vercel.app/",
+    link: "https://victordenay.com/",
     thumbnail: "/projects/background-v-denay.png",
     icon: "/projects/logo-v-denay.png",
   },
