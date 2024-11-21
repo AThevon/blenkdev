@@ -2,6 +2,14 @@ import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
   {
+    title: "V.Denay",
+    value: "v-denay",
+    description: "description-v-denay",
+    link: "https://v-denay-portfolio.vercel.app/",
+    thumbnail: "/projects/background-v-denay.png",
+    icon: "/projects/logo-v-denay.png",
+  },
+  {
     title: "Jynka",
     value: "jynka",
     description: "description-jynka",

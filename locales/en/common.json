@@ -1,1 +1,19 @@
-{"About":"About","Contact":"Contact","description-artkansia":"Artkansia is a portfolio for Artkansia, a project in digital marketing.\n","description-coque-en-bois":"Coque En Bois features a web configurator for customizing wooden trophies and medals.","description-digichat":"DigiChat is a fullstack application integrating a chat and a todo list with registration and login features.","description-findmyip":"FindMyIP is a small website that allows you to locate an IP address on a map.","description-jynka":"Jynka is a front-end web application created as a mockup for a digital marketing agency.","Home":"Home","no-link-description":"This feature isn't available yet.","no-link-title":"We're nearly there !","privacy-policy":"Security and Privacy Information","projects":"projects","Projects":"Projects","Services":"Services","testimonials":"testimonials","view-project":"See the project"}
+{
+	"About": "About",
+	"Contact": "Contact",
+	"description-artkansia": "Artkansia is a portfolio for Artkansia, a project in digital marketing.\n",
+	"description-coque-en-bois": "Coque En Bois features a web configurator for customizing wooden trophies and medals.",
+	"description-digichat": "DigiChat is a fullstack application integrating a chat and a todo list with registration and login features.",
+	"description-findmyip": "FindMyIP is a small website that allows you to locate an IP address on a map.",
+	"description-jynka": "Jynka is a front-end web application created as a mockup for a digital marketing agency.",
+  "description-v-denay": "Portfolio of Victor Denay, a Video Editor / Photographer / Director.",
+	"Home": "Home",
+	"no-link-description": "This feature isn't available yet.",
+	"no-link-title": "We're nearly there !",
+	"privacy-policy": "Security and Privacy Information",
+	"projects": "projects",
+	"Projects": "Projects",
+	"Services": "Services",
+	"testimonials": "testimonials",
+	"view-project": "See the project"
+}
