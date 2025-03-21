@@ -3,15 +3,14 @@ import React from "react";
 import Image from "next/image";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { useTranslation } from "react-i18next";
-import { list } from "postcss";
 
 export function BeamContainer() {
   const { t } = useTranslation("services");
 
-  function formatListItem(text: string) {
-    const [boldText, normalText] = text.split(/:(.+)/);
-    return (<> <span className="font-bold">{boldText}:</span>{normalText} </>);
-  }
+  // function formatListItem(text: string) {
+  //   const [boldText, normalText] = text.split(/:(.+)/);
+  //   return (<> <span className="font-bold">{boldText}:</span>{normalText} </>);
+  // }
 
   return (
     <TracingBeam className="px-6">
@@ -36,7 +35,7 @@ export function BeamContainer() {
               {item.list && (
                 <ul className="list-disc pl-6 flex flex-col gap-4 dark:text-neutral-100 text-neutral-800">
                   {item.list.map((listItem, index) => (
-                    <li key={`list-item-${index}`}>{formatListItem(t(`${listItem}`))}</li>
+                    <li key={`list-item-${index}`}>{t(`${listItem}`)}</li>
                   ))}
                 </ul>
               )}
@@ -78,17 +77,5 @@ const content = [
     list: ["text-5.1", "text-5.2", "text-5.3"],
     image:
       "/services/services-5.webp",
-  },
-  {
-    title: "title-6",
-    list: ["text-6.1", "text-6.2", "text-6.3"],
-    image:
-      "/services/services-6.webp",
-  },
-  {
-    title: "title-7",
-    list: ["text-7.1", "text-7.2", "text-7.3"],
-    image:
-      "/services/services-7.webp",
   },
 ];

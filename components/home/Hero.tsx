@@ -32,7 +32,7 @@ export function Hero() {
         className="hidden md:block fixed h-screen w-full object-cover object-center top-0 -z-1"
         initial={{ opacity: 0, x: 800, y: 0, rotate: 0 }}
         animate={{ opacity: 1, x: 200, y: 50, rotate: -15 }}
-        transition={{ delay: 1, duration: 3, type: "spring", damping: 15, stiffness: 100 }}
+        transition={{ delay: 1, duration: 1, ease: "easeOut" }}
         style={{ opacity: opacity, scale: scale }}
       >
         <motion.img
@@ -54,20 +54,20 @@ export function Hero() {
             damping: 10,
             stiffness: 100,
           }}
-          className="hidden lg:block relative w-[60%]"
+          className="hidden lg:block relative w-[60%] overflow-hidden"
         >
           <Suspense fallback={null}>
             <Spline
-              className="relative w-full h-full"
+              className="relative w-full h-full scale-[1.12]"
               scene="https://prod.spline.design/paCAePhrCCbSnWIr/scene.splinecode"
-            />
+              />
           </Suspense>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
-            delay: 0.3,
+            delay: 0.8,
             duration: 0.8,
             ease: "easeInOut",
           }}

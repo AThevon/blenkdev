@@ -39,7 +39,7 @@ export default async function Contact({ params: { locale } }: Params) {
             <ContactForm />
             <ContactContainer>
               <SocialsCards />
-              <div className="hidden md:block">
+              <div className="hidden md:block h-full w-full">
                 <ContactRobot />
               </div>
             </ContactContainer>

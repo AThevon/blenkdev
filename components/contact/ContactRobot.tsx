@@ -12,12 +12,19 @@ const ContactRobot = () => {
     loading: () => null,
   });
   return (
-    <Suspense fallback={null}>
-      <Spline
-        scene="https://prod.spline.design/5dmn1cFCC0otVcEH/scene.splinecode"
-        className="w-full h-full z-50"
-      />
-    </Suspense>
+    <motion.div
+      className="h-full flex flex-col justify-between items-center"
+      initial={{ opacity: 0, y: 200 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 2 }}
+    >
+      <Suspense fallback={null}>
+        <Spline
+          scene="https://prod.spline.design/5dmn1cFCC0otVcEH/scene.splinecode"
+          className="w-full h-full z-50"
+        />
+      </Suspense>
+    </motion.div>
   );
 };
 

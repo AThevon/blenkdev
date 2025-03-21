@@ -26,7 +26,7 @@ export function VanishWords() {
         ) : (
           <>
             <FlipWords
-              className="font-sans mb-4 font-bold"
+              className="font-sans mb-4 font-bold min-w-[20rem] "
               words={words}
             />
             <br />
