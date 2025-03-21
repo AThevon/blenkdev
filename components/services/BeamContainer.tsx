@@ -7,11 +7,6 @@ import { useTranslation } from "react-i18next";
 export function BeamContainer() {
   const { t } = useTranslation("services");
 
-  // function formatListItem(text: string) {
-  //   const [boldText, normalText] = text.split(/:(.+)/);
-  //   return (<> <span className="font-bold">{boldText}:</span>{normalText} </>);
-  // }
-
   return (
     <TracingBeam className="px-6">
       <div className="max-w-2xl mx-auto antialiased pt-4 relative">
@@ -52,30 +47,30 @@ const content = [
     title: "title-1",
     description: "text-1",
     image:
-      "/services/services-1.webp",
+      "/services/services-1.jpg",
   },
   {
     title: "title-2",
     list: ["text-2.1", "text-2.2", "text-2.3"],
     image:
-      "/services/services-2.webp",
+      "/services/services-2.jpg",
   },
   {
     title: "title-3",
     list: ["text-3.1", "text-3.2", "text-3.3"],
     image:
-      "/services/services-3.webp",
+      "/services/services-3.jpg",
   },
   {
     title: "title-4",
     list: ["text-4.1", "text-4.2", "text-4.3"],
     image:
-      "/services/services-4.webp",
+      "/services/services-4.jpg",
   },
   {
     title: "title-5",
     list: ["text-5.1", "text-5.2", "text-5.3"],
     image:
-      "/services/services-5.webp",
+      "/services/services-5.jpg",
   },
 ];
