@@ -1,6 +1,6 @@
-import { generateEmailTemplate } from "@/components/misc/EmailTemplate";
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer, { Transporter } from "nodemailer";
+import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
+import { generateEmailTemplate } from "@/components/misc/EmailTemplate";
 
 interface EmailBody {
    firstName: string;
@@ -14,37 +14,29 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       const body: EmailBody = await req.json();
       const { firstName, lastName, email, content } = body;
 
-      // Configurez le transporteur SMTP
-      const transporter: Transporter = nodemailer.createTransport({
-         host: process.env.SMTP_HOST,
-         port: parseInt(process.env.SMTP_PORT || "587", 10),
-         secure: false, // true pour le port 465, false pour les autres ports
-         auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-         },
+      const mailerSend = new MailerSend({
+         apiKey: process.env.MAILERSEND_API_KEY!,
       });
 
-      // Générer le contenu HTML de l'e-mail
       const emailHtml = generateEmailTemplate({
-         firstName: firstName,
-         lastName: lastName,
-         email: email,
-         content: content,
+         firstName,
+         lastName,
+         email,
+         content,
       });
 
-      // Configurez l'e-mail
-      const mailOptions = {
-         from: `${firstName} ${lastName} <${process.env.SMTP_USER}>`,
-         to: process.env.SMTP_USER,
-         subject: "BlenkDev -> Nouveau Message du Website!",
-         html: emailHtml,
-      };
+      const sentFrom = new Sender(process.env.MAIL_FROM_ADDRESS!, `${firstName} ${lastName}`);
+      const recipients = [new Recipient(process.env.MAIL_TO_ADDRESS!, "BlenkDev")];
 
-      // Envoyez l'e-mail
-      const info = await transporter.sendMail(mailOptions);
+      const emailParams = new EmailParams()
+         .setFrom(sentFrom)
+         .setTo(recipients)
+         .setSubject("BlenkDev -> Nouveau Message du Website!")
+         .setHtml(emailHtml);
 
-      return NextResponse.json({ message: "Email sent", info });
+      const response = await mailerSend.email.send(emailParams);
+
+      return NextResponse.json({ message: "Email sent via MailerSend", response });
    } catch (error: any) {
       console.error("Error sending email:", error);
       return NextResponse.json({ error: error.message }, { status: 500 });

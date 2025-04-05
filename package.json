@@ -29,6 +29,7 @@
 		"i18next": "^23.11.3",
 		"i18next-resources-to-backend": "^1.2.1",
 		"lucide-react": "^0.376.0",
+		"mailersend": "^2.5.0",
 		"mini-svg-data-uri": "^1.4.4",
 		"next": "14.2.3",
 		"next-i18n-router": "^5.4.2",
