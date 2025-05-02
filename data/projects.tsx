@@ -2,6 +2,14 @@ import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
   {
+    title: "Under The Flow",
+    value: "under-the-flow",
+    description: "description-utf",
+    link: "https://www.undertheflow.com/",
+    thumbnail: "/projects/background-utf.png",
+    icon: "/projects/logo-utf.png",
+  },
+  {
     title: "V.Denay",
     value: "v-denay",
     description: "description-v-denay",
@@ -25,22 +33,22 @@ export const projects: Project[] = [
     thumbnail: "/projects/background-digichat.png",
     icon: "/projects/logo-digichat.png",
   },
-  {
-    title: "Artkansia",
-    value: "artkansia",
-    description: "description-artkansia",
-    link: "",
-    thumbnail: "/projects/background-artkansia.png",
-    icon: "/projects/logo-artkansia.png",
-  },
-  {
-    title: "Coque En Bois",
-    value: "coque-en-bois",
-    description: "description-coque-en-bois",
-    link: "",
-    thumbnail: "/projects/background-coque-en-bois.png",
-    icon: "/projects/logo-coque-en-bois.png",
-  },
+  // {
+  //   title: "Artkansia",
+  //   value: "artkansia",
+  //   description: "description-artkansia",
+  //   link: "",
+  //   thumbnail: "/projects/background-artkansia.png",
+  //   icon: "/projects/logo-artkansia.png",
+  // },
+  // {
+  //   title: "Coque En Bois",
+  //   value: "coque-en-bois",
+  //   description: "description-coque-en-bois",
+  //   link: "",
+  //   thumbnail: "/projects/background-coque-en-bois.png",
+  //   icon: "/projects/logo-coque-en-bois.png",
+  // },
   // {
   //   title: "FindMyIP",
   //   value: "findmyip",
