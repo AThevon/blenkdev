@@ -2,26 +2,10 @@ import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
   {
-    title: "Under The Flow",
-    value: "under-the-flow",
-    description: "description-utf",
-    link: "https://www.undertheflow.com/",
-    thumbnail: "/projects/background-utf.png",
-    icon: "/projects/logo-utf.png",
-  },
-  {
-    title: "V.Denay",
-    value: "v-denay",
-    description: "description-v-denay",
-    link: "https://victordenay.com/",
-    thumbnail: "/projects/background-v-denay.png",
-    icon: "/projects/logo-v-denay.png",
-  },
-  {
     title: "Jynka",
     value: "jynka",
     description: "description-jynka",
-    link: "https://jynka.vercel.app/",
+    link: "",
     thumbnail: "/projects/background-jynka.png",
     icon: "/projects/logo-jynka.png",
   },
@@ -29,7 +13,7 @@ export const projects: Project[] = [
     title: "DigiChat",
     value: "digichat",
     description: "description-digichat",
-    link: "https://digichat.vercel.app/",
+    link: "",
     thumbnail: "/projects/background-digichat.png",
     icon: "/projects/logo-digichat.png",
   },
