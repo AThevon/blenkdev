@@ -4,22 +4,22 @@ const path = require('path');
 const sitemap = `
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-      <loc>https://blenkdev.fr/</loc>
+      <loc>https://blenkdev.athevon.dev/</loc>
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
     </url>
     <url>
-      <loc>https://blenkdev.fr/contact</loc>
+      <loc>https://blenkdev.athevon.dev/contact</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
     <url>
-      <loc>https://blenkdev.fr/services</loc>
+      <loc>https://blenkdev.athevon.dev/services</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
     <url>
-      <loc>https://blenkdev.fr/projects</loc>
+      <loc>https://blenkdev.athevon.dev/projects</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>

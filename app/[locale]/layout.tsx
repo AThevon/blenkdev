@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   description: "BlenkDev is a software development company.",
   openGraph: {
     type: "website",
-    url: "https://blenkdev.fr",
+    url: "https://blenkdev.athevon.dev",
     title: "BlenkDev - Software Development Company",
     description: "BlenkDev is a software development company own by Adrien Thevon, a fullstack web developer.",
     images: [

@@ -14,7 +14,7 @@ export default async function Contact({ params: { locale } }: Params) {
   const pageTitle = "Contactez Adrien Thevon - BlenkDev";
   const pageDescription = "Contactez Adrien Thevon, développeur web fullstack et fondateur de BlenkDev. Utilisez le formulaire de contact ou connectez-vous via LinkedIn, Fiverr ou Malt.";
   const imageUrl = "/blenkdev-thumbnail.png";
-  const pageUrl = "https://blenkdev.fr/contact";
+  const pageUrl = "https://blenkdev.athevon.dev/contact";
 
 
   return (

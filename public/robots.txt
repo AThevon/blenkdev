@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://blenkdev.fr/sitemap.xml
+Sitemap: https://blenkdev.athevon.dev/sitemap.xml

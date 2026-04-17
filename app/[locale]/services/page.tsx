@@ -12,7 +12,7 @@ export default async function Services({ params: { locale } }: Params) {
   const pageTitle = "Services de Développement Web - BlenkDev";
   const pageDescription = "Découvrez les services de développement web proposés par Adrien Thevon chez BlenkDev. Développement fullstack, applications web, design UX/UI, et plus encore.";
   const imageUrl = "/blenkdev-thumbnail.png";
-  const pageUrl = "https://blenkdev.fr";
+  const pageUrl = "https://blenkdev.athevon.dev";
 
   return (
     <>

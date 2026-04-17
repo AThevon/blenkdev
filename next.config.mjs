@@ -23,7 +23,7 @@ const nextConfig = {
     },
     reactStrictMode: true,
     images: {
-        domains: ['blenkdev.fr'],
+        domains: ['blenkdev.athevon.dev'],
     },
 };
 

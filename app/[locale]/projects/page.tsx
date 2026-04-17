@@ -5,7 +5,7 @@ import Head from "next/head";
 const pageTitle = "Projects | Adrien Thevon | BlenkDev";
 const pageDescription = "Discover some of the projects I have worked on, from web applications to UX/UI design.";
 const imageUrl = "/blenkdev-thumbnail.png";
-const pageUrl = "https://blenkdev.fr";
+const pageUrl = "https://blenkdev.athevon.dev";
 
 
 export default async function Projects() {
